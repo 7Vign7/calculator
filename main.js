@@ -21,28 +21,56 @@ calculatorInput.addEventListener(`click`, (event)=>{
             calculatorEnter.innerHTML = x
             break;
         case ".":
-            if(Array.from(x).includes(".") === false){
-                x += event.target.innerText
-                calculatorEnter.innerHTML = x ;
+            if(operation === ``){
+                if(Array.from(x).includes(".") === false){
+                    x += event.target.innerText
+                    calculatorEnter.innerHTML = x ;
+                }
+            }
+            else{
+                if(Array.from(y).includes(".") === false){
+                    y += event.target.innerText
+                    calculatorEnter.innerHTML = y ;
+                }
             }
             break;
         case "/":
         case "X":
         case "-":
         case "+":
-            operation = event.target.innerText
-            calculatorEnter.innerHTML = "0"
-            break;
+            if(event.target.innerText == "X"){
+                operation = "*"
+
+            }
+            else{
+                operation = event.target.innerText
+            }
+            calculatorEnter.innerHTML = y
+
+                break;
         case '=':
+            x = eval(x + operation + y);
+            calculatorEnter.innerHTML = x ;
             break;
         default:
-            if(calculatorEnter.innerHTML === "0" && event.target.innerText !=="."){
+            if(operation === ``){
+                if(calculatorEnter.innerHTML === "0" && event.target.innerText !=="."){
                 x = event.target.innerText
+            }
+                else {
+                x += event.target.innerText
+            }
                 calculatorEnter.innerHTML = x;
             }
-            else {
-                x += event.target.innerText
-                calculatorEnter.innerHTML = x;
+           else{
+                if(calculatorEnter.innerHTML === "0" && event.target.innerText !=="."){
+                    y = event.target.innerText
+                }
+                else {
+                    y += event.target.innerText
+                }
+                calculatorEnter.innerHTML = y;
             }
     }
 });
+
