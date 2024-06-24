@@ -6,7 +6,7 @@ body{
 }
 .calculator {
     background-color: black;
-    padding: 5%;
+    padding: 10% 5%;
     border-radius: 30px;
 }
 .calculator_enter p{
