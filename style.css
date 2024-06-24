@@ -2,6 +2,7 @@ body{
     color: #fff;
     font-size: 30px;
     font-family: system-ui;
+    background-color: black;
 }
 .calculator {
     background-color: black;
@@ -40,13 +41,11 @@ body{
 .btn_orange{
     background-color: #e17d00;
 }
-.btn_orange:focus{
+.btn_active{
     background-color: #ffffff;
     color: #e17d00;
 }
 .btn:hover{
     filter: brightness(130%);
 }
-.btn:active{
-    filter: brightness(135%);
-}
+
